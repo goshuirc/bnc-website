@@ -1,0 +1,14 @@
+# Files/Folders to exclude from the final output
+exclude:
+  - config.rb
+  - .sass-cache
+
+gems:
+  - jekyll-sitemap
+
+permalink: none
+
+highlighter: rouge
+markdown: kramdown
+
+repository: goshuirc/bnc
