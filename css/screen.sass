@@ -1,6 +1,14 @@
 ---
 ---
 
+// fonts
+@font-face
+    font-family: 'All Things Pink Medium'
+    src: url('../fonts/all_things_pink-webfont.woff2') format('woff2'), url('../fonts/all_things_pink-webfont.woff') format('woff')
+    font-weight: normal
+    font-style: normal
+
+// layout
 html
     box-sizing: border-box
 *, *:before, *:after
@@ -13,7 +21,9 @@ html, body, #wrapper
     margin: 0
     padding: 0
 
-#wrapper
+#frontpage-wrapper
+    width: 100%
+    height: 100%
     display: flex
     align-items: center
     justify-content: center
@@ -22,3 +32,166 @@ html, body, #wrapper
     > img
         width: 50rem
         max-width: 100%
+
+.wrapper
+    width: 70rem
+    max-width: calc(100% - 2rem)
+    margin: 0 auto
+
+body
+    display: flex
+    flex-direction: column
+
+#content
+    flex-grow: 1
+
+#header, #content, #footer
+    flex-shrink: 0
+    overflow-x: hidden
+    hr
+        border: 0
+        width: 120%
+        height: 0.5rem
+        margin: 0 0 -0.3rem -10%
+        padding: 0
+        background: url(../img/sketchy-rule.svg) 0 0 repeat-x
+        position: relative
+        &.reversed
+            transform: scaleY(-1)
+            margin: 0 0 -0.17rem -10%
+#header hr
+    margin: 0 0 0 -10%
+#content
+    margin-top: -0.3rem
+
+#header div
+    display: flex
+    align-items: flex-end
+    #header-logo
+        display: inline-block
+        padding: 2rem 0rem 1.5rem
+        img
+            width: 13rem
+    nav
+        flex-grow: 1
+        text-align: center
+        display: inline-block
+        padding-right: 1rem
+        a
+            font-family: "All Things Pink Medium", sans-serif
+            display: inline-block
+            font-size: 2.2rem
+            padding: 1rem 0 2rem
+            text-decoration: none
+            color: #111
+            transition: color .1s ease-in
+            text-transform: lowercase
+            + a
+                margin-left: 2.1rem
+            &:hover
+                color: #c2176b
+
+.marketing-spin
+    background: #fffefa
+    font-family: "All Things Pink Medium", sans-serif
+    font-size: 2.2rem
+    > div
+        width: 70rem
+        max-width: calc(100% - 2rem)
+        margin: 0 auto
+        padding: 1.42rem 0 2rem
+        .headline
+            display: block
+            text-align: center
+            font-size: 1.64em
+            color: #c2176b
+            margin: 0 0 1rem
+
+.logo-midtext-pip
+    display: inline
+    max-width: 0.4em
+    vertical-align: baseline
+    padding: 0 0.03em 0.045em
+
+#footer
+    background-color: #fffefa
+    div
+        padding: 1.4rem 0 1.1rem
+        font-family: "All Things Pink Medium", sans-serif
+        font-size: 1.6rem
+        text-align: center
+        a
+            color: #c2176b
+            text-decoration: none
+
+.sidebyside
+    display: flex
+    > div
+        width: 50%
+
+h2
+    font-family: "All Things Pink Medium", sans-serif
+    font-size: 2rem
+    font-weight: normal
+
+.dl-grid
+    display: flex
+    width: 100%
+    flex-direction: row
+    > a
+        display: block
+        width: 50%
+        text-align: center
+        text-decoration: none
+
+        color: #222
+        transition: color .1s ease-in
+        &:hover
+            color: #c2176b
+            .logo-dark-fill
+                fill: #c2176b
+        .logo-dark-fill
+            transition: fill .1s ease-in
+        svg
+            display: block
+            width: 6.5rem
+            height: 9.4rem
+            margin: 0 auto
+        span
+            font-family: "All Things Pink Medium", sans-serif
+            font-size: 1.7rem
+
+    + .dl-grid
+        margin-top: 1.7rem
+
+.post
+    background: #fffefa
+    padding: 1rem 1.2rem
+    border: 0.13rem #262626 solid
+    border-radius: 1rem
+    + .post
+        margin-top: 1.6rem
+    &:last-of-type
+        margin-bottom: 1.6rem
+    
+    font-family: Tahoma,Verdana,Segoe,sans-serif
+
+    p:last-of-type
+        margin-bottom: 0
+
+    a
+        color: #c2176b
+
+    h3
+        margin: 0
+        padding: 0
+        font-weight: bold
+        letter-spacing: 0.03em
+        font-family: "All Things Pink Medium", sans-serif
+        font-size: 1.5rem
+        color: #141414
+    .postinfo
+        font-weight: normal
+        font-family: "All Things Pink Medium", sans-serif
+        font-size: 1.05rem
+        color: #3b3b3b

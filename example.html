@@ -1,0 +1,66 @@
+---
+layout: default
+title: goshubnc
+---
+<!--<a class="card-frontpage" href="https://github.com/goshuirc/bnc"><img alt="goshubnc: simple, always-on irc" src="/img/card-withbg.svg"/></a>-->
+
+<div class="marketing-spin"><div class="wrapper">
+    <span class="headline">simple, always-on irc</span>
+    goshu<img class="logo-midtext-pip" src="/img/logo-dot.svg"/>bnc is a simple irc bouncer that lets you stay connected and receive chat history.<br/>it stays connected so you don't have to!
+</div></div>
+<hr class="reversed"/>
+
+<div class="sidebyside wrapper">
+    <div>
+        <h2>downloads</h2>
+        <div class="dl-grid">
+            <a href="/">
+                {% include_relative img/platforms/windows.svg %}
+                <span>Windows</span>
+            </a>
+            <a href="/">
+                {% include_relative img/platforms/apple.svg %}
+                <span>macOS</span>
+            </a>
+        </div>
+        <div class="dl-grid">
+            <a href="/">
+                {% include_relative img/platforms/linux.svg %}
+                <span>Linux</span>
+            </a>
+            <a href="/">
+                {% include_relative img/platforms/raspberry-pi.svg %}
+                <span>Raspberry Pi</span>
+            </a>
+        </div>
+    </div>
+    <div>
+        <h2>latest news</h2>
+        <div class="post">
+            <h3>v0.4.0 - C2C Tags And Auth</h3>
+            <span class="postinfo">Daniel Oaks - 27 Jul 2017</span>
+            <p>
+                This is the fourth proper release of goshubnc! With this new version, prawnsalad brings external authentication methods (useful for plugging into existing systems), and we now support passing-through client-to-client tags if configured.
+            </p>
+            <p>
+                In addition, history can now be better replayed to multiple clients with the “passhistory” command, when you have your clients configured properly. This release makes it easier for both larger installs of goshubnc, as well as those who just have it installed on a little Raspberry Pi.
+            </p>
+            <p>
+                As always, you can download the new release <a href="/">from Github</a> or with the links on the left. Make sure to review the changelog to view the new config changes you need to make!
+            </p>
+        </div>
+        <div class="post">
+            <h3>v0.3.2 - self-message patch fix</h3>
+            <span class="postinfo">Daniel Oaks - 14 Jul 2017</span>
+            <p>
+                With this release comes a fix! Specifically, under certain circumstances (which are very rare), messages sometimes fail to get passed to alternate clients. This release fixes this patch and adds some tests to ensure it doesn’t happen again!
+            </p>
+            <p>
+                This release requires no config changes from v0.3.0 or v0.3.1, so upgrade as soon as possible to make sure this doesn’t affect you!
+            </p>
+            <p>
+                New releases can be downloaded <a href="/">from Github</a> or with the links on the left. If you’re upgrading from a pre-v0.3.0 version, checkout the changelog to see the new config changes.
+            </p>
+        </div>
+    </div>
+</div>
