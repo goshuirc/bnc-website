@@ -2,7 +2,6 @@
 layout: default
 title: goshubnc
 ---
-<!--<a class="card-frontpage" href="https://github.com/goshuirc/bnc"><img alt="goshubnc: simple, always-on irc" src="/img/card-withbg.svg"/></a>-->
 
 <div class="marketing-spin"><div class="wrapper">
     <span class="headline">simple, always-on irc</span>
@@ -13,54 +12,41 @@ title: goshubnc
 <div class="sidebyside wrapper">
     <div>
         <h2>downloads</h2>
-        <div class="dl-grid">
-            <a href="/">
-                {% include_relative img/platforms/windows.svg %}
-                <span>Windows</span>
-            </a>
-            <a href="/">
-                {% include_relative img/platforms/apple.svg %}
-                <span>macOS</span>
-            </a>
-        </div>
-        <div class="dl-grid">
-            <a href="/">
-                {% include_relative img/platforms/linux.svg %}
-                <span>Linux</span>
-            </a>
-            <a href="/">
-                {% include_relative img/platforms/raspberry-pi.svg %}
-                <span>Raspberry Pi</span>
-            </a>
+        {% include downloadplatforms.html %}
+        <h2 style="margin-bottom: 0.3em;">clients</h2>
+        <div class="box">
+            <p class="fontface">goshu<img class="logo-midtext-pip" src="/img/logo-dot.svg"/>bnc works with these clients (among others):</p>
+            <ul class="flexy-list">
+                <li><a href="/clients#adiirc">AdiIRC</a></li>
+                <li><a href="/clients#colloquy">Colloquy</a></li>
+                <li><a href="/clients#hexchat">HexChat</a></li>
+                <li><a href="/clients#irccloud">IRCCloud</a></li>
+                <li><a href="/clients#irssi">Irssi</a></li>
+                <li><a href="/clients#kiwiirc">Kiwi IRC</a></li>
+                <li><a href="/clients#kvirc">KVIrc</a></li>
+                <li><a href="/clients#konversation">Konversation</a></li>
+                <li><a href="/clients#mirc">mIRC</a></li>
+                <li><a href="/clients#mutter">Mutter</a></li>
+                <li><a href="/clients#palaver">Palaver</a></li>
+                <li><a href="/clients#quassel">Quassel</a></li>
+                <li><a href="/clients#textual">Textual</a></li>
+                <li><a href="/clients#the-lounge">The Lounge</a></li>
+                <li><a href="/clients#weechat">WeeChat</a></li>
+            </ul>
         </div>
     </div>
     <div>
         <h2>latest news</h2>
-        <div class="post">
-            <h3>v0.4.0 - C2C Tags And Auth</h3>
-            <span class="postinfo">Daniel Oaks - 27 Jul 2017</span>
-            <p>
-                This is the fourth proper release of goshubnc! With this new version, prawnsalad brings external authentication methods (useful for plugging into existing systems), and we now support passing-through client-to-client tags if configured.
-            </p>
-            <p>
-                In addition, history can now be better replayed to multiple clients with the “passhistory” command, when you have your clients configured properly. This release makes it easier for both larger installs of goshubnc, as well as those who just have it installed on a little Raspberry Pi.
-            </p>
-            <p>
-                As always, you can download the new release <a href="/">from Github</a> or with the links on the left. Make sure to review the changelog to view the new config changes you need to make!
-            </p>
+        {% assign post_limit = 4 %}
+        {% for post in site.posts limit:post_limit %}
+        <div class="post box">
+            <h3>{{ post.title }}</h3>
+            <span class="postinfo">{{ post.author }} - {{ post.date | date_to_string }}</span>
+            {{ post.content }}
         </div>
-        <div class="post">
-            <h3>v0.3.2 - self-message patch fix</h3>
-            <span class="postinfo">Daniel Oaks - 14 Jul 2017</span>
-            <p>
-                With this release comes a fix! Specifically, under certain circumstances (which are very rare), messages sometimes fail to get passed to alternate clients. This release fixes this patch and adds some tests to ensure it doesn’t happen again!
-            </p>
-            <p>
-                This release requires no config changes from v0.3.0 or v0.3.1, so upgrade as soon as possible to make sure this doesn’t affect you!
-            </p>
-            <p>
-                New releases can be downloaded <a href="/">from Github</a> or with the links on the left. If you’re upgrading from a pre-v0.3.0 version, checkout the changelog to see the new config changes.
-            </p>
-        </div>
+        {% endfor %}
+        {% if post_limit < site.posts.size %}
+        <a class="read-more-news" href="/news">Read More</a>
+        {% endif %}
     </div>
 </div>

@@ -28,18 +28,17 @@
             <div class="wrapper">
                 <a id="header-logo" href="/"><img src="/img/logo.svg"/></a>
                 <nav>
-                    <a href="/installing.html">Installing</a>
-                    <a href="/features.html">Features</a>
-                    <a href="/downloads.html">Downloads</a>
-                    <a href="/specs.html">Specs</a>
-                    <a href="/news.html">News</a>
-                    <a href="/contact.html">Contact</a>
+                    <a href="/installing">Installing</a>
+                    <a href="/features">Features</a>
+                    <a href="/downloads">Downloads</a>
+                    <a href="/specs">Specs</a>
+                    <a href="/news">News</a>
+                    <a href="/contact">Contact</a>
                 </nav>
             </div>
-            
             <hr/>
         </div>
-        <div id="content">
+        <div id="content"{% if layout.class %} class="{{ layout.class }}"{% endif %}>
             {{ content }}
         </div>
         <div id="footer">

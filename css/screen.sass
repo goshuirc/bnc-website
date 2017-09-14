@@ -45,6 +45,10 @@ body
 #content
     flex-grow: 1
 
+#content > .wrapper
+    font-family: Tahoma,Verdana,Segoe,sans-serif
+    font-size: 1.1rem
+
 #header, #content, #footer
     flex-shrink: 0
     overflow-x: hidden
@@ -63,6 +67,7 @@ body
     margin: 0 0 0 -10%
 #content
     margin-top: -0.3rem
+    padding-bottom: 2rem // padding rather than margin to preserve background colour properly on wrapped internal pages
 
 #header div
     display: flex
@@ -121,18 +126,45 @@ body
         font-size: 1.6rem
         text-align: center
         a
-            color: #c2176b
             text-decoration: none
 
 .sidebyside
     display: flex
     > div
         width: 50%
+        + div
+            margin-left: 1.5rem
 
+h1
+    font-family: "All Things Pink Medium", sans-serif
+    font-size: 2.6rem
+    margin: 2rem 0 0.6rem
+    font-weight: normal
 h2
     font-family: "All Things Pink Medium", sans-serif
     font-size: 2rem
     font-weight: normal
+
+a
+    color: #c2176b
+
+.fontface
+    font-family: "All Things Pink Medium", sans-serif
+    font-size: 1.35em
+
+.flexy-list
+    font-size: 1.2rem
+    text-align: center
+    padding: 0
+    margin: 0.3em 0 1em
+    &:last-child
+        margin-bottom: 0
+    li
+        display: inline-block
+        padding: .35em 1em
+
+.whitebg
+    background: #fffefa
 
 .dl-grid
     display: flex
@@ -164,23 +196,34 @@ h2
     + .dl-grid
         margin-top: 1.7rem
 
-.post
+p
+    margin: 0
+    + p
+        margin-top: 0.8em
+    &:last-of-type
+        margin-bottom: 0
+li + li
+    margin-top: 0.3em
+
+.box
     background: #fffefa
     padding: 1rem 1.2rem
     border: 0.13rem #262626 solid
     border-radius: 1rem
+
+.read-more-news
+    font-family: "All Things Pink Medium", sans-serif
+    font-size: 1.4em
+    text-transform: lowercase
+    text-decoration: none
+    display: block
+    margin-top: 0.4em
+
+.post
     + .post
         margin-top: 1.6rem
-    &:last-of-type
-        margin-bottom: 1.6rem
-    
+
     font-family: Tahoma,Verdana,Segoe,sans-serif
-
-    p:last-of-type
-        margin-bottom: 0
-
-    a
-        color: #c2176b
 
     h3
         margin: 0
